@@ -1,21 +1,25 @@
-let slideIndex = 1; // Inicializado en 0 para que la primera transición sea más suave
+let slideIndex = 0;
 
 function showSlides() {
-  let i;
   let slides = document.getElementsByClassName("mySlides");
-  
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+
+  for (let i = 0; i < slides.length; i++) {
+   
+    slides[i].style.display = "none"; //Oculta todas las imágenes
+
   }
 
   slideIndex++;
-  
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
+
+  if (slideIndex >= slides.length) {
+    slideIndex = 0; // Reiniciar al principio cuando se llega al final
   }
+
   
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 3000); // Cambiar la imagen cada 3 segundos
+  slides[slideIndex].style.display = "block"; // Mostrar la siguiente imagen
 }
 
+// Iniciar el slideshow
 showSlides();
+setInterval(showSlides, 3000); // Cambiar la imagen cada 3 segundos
+

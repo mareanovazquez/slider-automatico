@@ -6,33 +6,28 @@ main {
 }
 /* Slideshow container */
 .slideshow-container {
-  width: 50%;
-  height: 50vh;
+  position: relative;
+  width: 100%;
+  height: auto; /* Se ajusta automáticamente al tamaño de las imágenes */
+  overflow: hidden; /* Evita que las imágenes se desborden */
+
 }
 
 /* Hide the images by default */
 .mySlides {
-  display: none;
-}
-.img-1,
-.img-2,
-.img-3,
-.img-4 {
+  position: relative;
   width: 100%;
+  height: 100%;
+  transition: display 1.5s ease;
+  }
+
+/* Mostrar la primera imagen */
+
+
+/* Estilo para las imágenes */
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajustar el tamaño de la imagen */
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in-out; /* Cambiado a ease-in-out para una transición más suave */
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
