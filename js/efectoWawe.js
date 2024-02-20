@@ -18,4 +18,4 @@ function showSlides() {
 
 // Iniciar el slideshow
 showSlides();
-setInterval(showSlides, 3000); // Cambiar la imagen cada 3 segundos
+setInterval(showSlides, 1000); // Cambiar la imagen cada 3 segundos
