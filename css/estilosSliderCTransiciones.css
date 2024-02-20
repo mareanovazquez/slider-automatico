@@ -5,37 +5,51 @@ main {
     align-items: center;
 }
 
-/* Slideshow container */
+/* Contenedor Slider */
 .slideshow-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    /* Se ajusta automáticamente al tamaño de las imágenes */
-    overflow: hidden;
-    /* Evita que las imágenes se desborden */
+    width: 50%;
 
 }
 
-/* Hide the images by default */
+/* Oculta las imágenes por default */
 .mySlides {
-    position: relative;
-    
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1.5s ease;
+    display: none;
 }
 
-
-/* Mostrar la primera imagen */
-.mySlides:first-child {
-    opacity: 1;
-  }
-
-/* Estilo para las imágenes */
-.mySlides img {
+.img-1,
+.img-2,
+.img-3,
+.img-4 {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ajustar el tamaño de la imagen */
+    border-radius: 10px;
+}
+
+/* Animación */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.2;
+    }
+
+    25% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    75% {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

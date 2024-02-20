@@ -7,7 +7,7 @@ main {
 /* Slideshow container */
 .slideshow-container {
   position: relative;
-  width: 100%;
+  width: 70%;
   height: auto; /* Se ajusta automáticamente al tamaño de las imágenes */
   overflow: hidden; /* Evita que las imágenes se desborden */
 

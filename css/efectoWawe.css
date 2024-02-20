@@ -1,0 +1,40 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 70%;
+    height: auto;
+    /* Se ajusta automáticamente al tamaño de las imágenes */
+    overflow: hidden;
+    /* Evita que las imágenes se desborden */
+    }
+
+/* Hide the images by default */
+.mySlides {
+    position: relative;
+    
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+
+/* Mostrar la primera imagen */
+.mySlides:first-child {
+    opacity: 1;
+  }
+
+/* Estilo para las imágenes */
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajustar el tamaño de la imagen */
+}
