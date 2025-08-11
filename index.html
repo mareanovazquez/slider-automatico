@@ -10,27 +10,49 @@
 </head>
 
 <body>
-
     <main>
-        <h1> SLIDER AUTOMÁTICO SIN TRANSICIONES</h1>
+        <h1>SLIDER AUTOMÁTICO CON TRANSICIONES SUAVES</h1>
+
         <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img class="img-1" src="./img/corgiBaby.jpg">
+            <!-- Slide 1 -->
+            <div class="mySlides active">
+                <img src="./img/corgiBaby.jpg" alt="Corgi Baby">
             </div>
-            <div class="mySlides fade">
-                <img src="./img/corgiPerfil.jpg" alt="" class="img-2">
+
+            <!-- Slide 2 -->
+            <div class="mySlides">
+                <img src="./img/corgiPerfil.jpg" alt="Corgi de Perfil">
             </div>
-            <div class="mySlides fade">
-                <img class="img-3" src="./img/corgiVolador.jpg">
+
+            <!-- Slide 3 -->
+            <div class="mySlides">
+                <img src="./img/corgiVolador.jpg" alt="Corgi Volador">
             </div>
-            <div class="mySlides fade">
-                <img class="img-4" src="./img/gatoCeñoFruncido.jpg" alt="">
+
+            <!-- Slide 4 -->
+            <div class="mySlides">
+                <img src="./img/gatoCenioFruncido.jpg" alt="Gato con Ceño Fruncido">
             </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="controls">
+            <button class="control-btn" onclick="previousSlide()">⬅ Anterior</button>
+            <button class="control-btn" onclick="toggleAutoplay()" id="playPauseBtn">⏸ Pausar</button>
+            <button class="control-btn" onclick="nextSlide()">Siguiente ➡</button>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="indicators" id="indicators"></div>
+
+        <!-- Status -->
+        <div class="status" id="status">
+            Slide 1 de 4 - Autoplay activo
         </div>
     </main>
 
-    <button><a href="./sliderConTrans.html">Slider con transiciones</a></button>
     <script src="./js/slider.js"></script>
+
 </body>
 
 </html>

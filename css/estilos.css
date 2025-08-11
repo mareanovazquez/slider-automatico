@@ -1,33 +1,178 @@
+/* === RESET & BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* === MAIN LAYOUT === */
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
 }
-/* Slideshow container */
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* === SLIDER CONTAINER === */
 .slideshow-container {
-  position: relative;
-  width: 70%;
-  height: auto; /* Se ajusta automáticamente al tamaño de las imágenes */
-  overflow: hidden; /* Evita que las imágenes se desborden */
-
+    position: relative;
+    bottom: 200px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Hide the images by default */
+/* === SLIDES === */
 .mySlides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: display 1.5s ease;
-  }
-
-/* Mostrar la primera imagen */
-
-
-/* Estilo para las imágenes */
-.mySlides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajustar el tamaño de la imagen */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    z-index: 1;
 }
 
+.mySlides.active {
+    opacity: 1;
+    z-index: 10;
+    /* ← Agregá esto */
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === PLACEHOLDER PARA IMÁGENES === */
+/* .placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .placeholder.img-2 {
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+        }
+
+        .placeholder.img-3 {
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+        }
+
+        .placeholder.img-4 {
+            background: linear-gradient(45deg, #e0c3fc, #9bb5ff);
+        } */
+
+/* === CONTROLES === */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.control-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.control-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+/* === INDICADORES === */
+.indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* === STATUS === */
+.status {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .slideshow-container {
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .mySlides {
+        height: 300px;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .control-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
